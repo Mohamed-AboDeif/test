@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "eu-central-1"
+  region = "us-east-1"
 }
 
 resource "aws_s3_bucket" "my_bucket" {
@@ -15,3 +15,15 @@ resource "random_string" "suffix" {
 output "bucket_name" {
   value = aws_s3_bucket.my_bucket.id
 }
+
+
+# terraform {
+#   cloud {
+#     hostname     = "mohamedaboudeif.scalr.io"
+#     organization = "Environment-A"
+
+#     workspaces {
+#       name = "test-s3"
+#     }
+#   }
+# }
