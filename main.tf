@@ -16,14 +16,13 @@ output "bucket_name" {
   value = aws_s3_bucket.my_bucket.id
 }
 
+terraform {
+  cloud {
+    hostname     = "mohamedaboudeif.scalr.io"
+    organization = "Environment-A"
 
-# terraform {
-#   cloud {
-#     hostname     = "mohamedaboudeif.scalr.io"
-#     organization = "Environment-A"
-
-#     workspaces {
-#       name = "test-s3"
-#     }
-#   }
-# }
+    workspaces {
+      name = "test-s3"
+    }
+  }
+}
